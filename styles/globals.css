@@ -16,12 +16,25 @@ body {
   padding: 0;
 }
 
+p {
+  @apply text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-title;
+}
+
 /* tailwind components  */
 
-@layer components{
+@layer components {
 
   /* wrapper container */
-  .container{
-    @apply !max-w-screen-2xl mx-auto px-5
+  .container {
+    @apply  !max-w-screen-2xl mx-auto px-5
   }
 }
