@@ -133,7 +133,7 @@ const Footer = () => {
         <div className="my-10 flex md:justify-between flex-wrap space-y-3 justify-center items-center border-t">
 
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© {new Date().getFullYear()} 
-        <a href="/" className="hover:underline" target="_blank" rel="noreferrer"> Mosabbir Ahamed</a>
+        <a href="https://mosabbir-ahamed.netlify.app/" className="hover:underline" target="_blank" rel="noreferrer"> Mosabbir Ahamed</a>
         . No Rights Reserved.
          <span> Bulid for Educational Purposes.</span>
           </span>
