@@ -1,6 +1,6 @@
 import React from 'react'
-import OfferCard from './OfferCard';
 import SectionHeading from '../shared/SectionHeading';
+import OfferCard from './OfferCard';
 
 const OFFERS = [
     {
@@ -40,7 +40,7 @@ const FeaturedBrands = () => {
                     moreText="All Offers"
                  />
                  {/* Categories Slider */}
-                 <div className="flex gap-7  overflow-x-auto  mt-5 pt-5  pl-2 -ml-2 no-scrollbar">
+                 <div className="flex gap-7  overflow-x-auto  mt-5 pt-5  pl-2 -ml-2 ">
                     {OFFERS.map((item, index) => (
                         <OfferCard
                             key={index}

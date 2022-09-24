@@ -6,7 +6,7 @@ import { FiUser , FiShoppingCart } from 'react-icons/fi';
 
 const Header = () => {
   return (
-    <header className='bg-white py-5 border-b'>
+    <header className='bg-white py-5 border-b '>
       <div className="container ">
 
         {/* header top area */}
