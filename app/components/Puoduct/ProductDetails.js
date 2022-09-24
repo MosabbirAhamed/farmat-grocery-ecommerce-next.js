@@ -1,4 +1,8 @@
 import FooterCard from "../FooterCard"
+import { BsStarHalf, BsStarFill, BsStar } from 'react-icons/bs';
+import ReactStars from "react-rating-stars-component";
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
+import InnerImageZoom from 'react-inner-image-zoom'
 
 const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
     return (
@@ -7,7 +11,7 @@ const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
                 <div className="bg-white p-7 rounded-2xl">
                     <div className="flex flex-wrap lg:flex-row flex-col lg:gap-0 gap-7">
                         <div className="lg:w-2/5 lg:border-r" >
-                            <img src="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?fit=800%2C800&ssl=1" alt="" loading='lazy' />
+                            <InnerImageZoom src="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?fit=800%2C800&ssl=1" zoomSrc="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?fit=800%2C800&ssl=1" zoomType="hover" fullscreenOnMobile={true} />
                         </div>
                         <div className="lg:w-2/5 w-full md:pl-10 pl-0">
                             <div className="text-color mb-5">
@@ -21,7 +25,22 @@ const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
                             </div>
                             <h4 className='md:text-xl text-base text-orange font-bold mb-2'>MartFury</h4>
                             <h1 className='md:text-3xl text-title text-xl font-semibold mb-5'>Soft Mochi & Galeto Ice Cream</h1>
-                            <span className="text-color text-xs">⭐⭐⭐⭐⭐ (1 customer review)</span>
+
+                            <div className="text-color text-xs flex items-center gap-2">
+                                <ReactStars
+                                    count={5}
+                                    value={3.5}
+                                    size={18}
+                                    activeColor="#EFB338"
+                                    edit={false}
+                                    isHalf={true}
+                                    emptyIcon={<BsStar />}
+                                    halfIcon={<BsStarHalf />}
+                                    filledIcon={<BsStarFill />}
+                                />
+                                (1 customer review)
+                            </div>
+
                             <div className="my-3">
                                 <span className="text-sm text-gray-400 mb-2">500g</span>
                                 <div className="flex items-center gap-2">
@@ -64,13 +83,13 @@ const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
                                     title="Free Shipping"
                                     subtitle="For all orders over $200"
                                 />
-                            <div className="border-t my-5"></div>
+                                <div className="border-t my-5"></div>
                                 <FooterCard
                                     image="/icons/f_2.svg"
                                     title="1 & 1 Returns"
                                     subtitle="Cancellation after 1 day"
                                 />
-                            <div className="border-t my-5"></div>
+                                <div className="border-t my-5"></div>
                                 <FooterCard
                                     image="/icons/f_3.svg"
                                     title="Secure Payment"

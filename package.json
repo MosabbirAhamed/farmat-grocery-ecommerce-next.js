@@ -12,7 +12,10 @@
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "react-inner-image-zoom": "^3.0.2",
+    "react-rating-stars-component": "^2.2.0",
+    "react-stars": "^2.2.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",

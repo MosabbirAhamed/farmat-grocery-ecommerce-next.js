@@ -2,7 +2,7 @@ import React from 'react'
 
 const FooterCard = ({title, subtitle, image}) => {
   return (
-    <div className="flex gap-5 items-center">
+    <div className="flex gap-5 items-center cursor-pointer">
         <img
          src={image}
          loading={"lazy"}
