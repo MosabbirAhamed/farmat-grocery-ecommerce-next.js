@@ -40,7 +40,7 @@ h6 {
 
   /* Buttons */
   .btn-white{
-    @apply text-title text-sm bg-white font-bold py-2 md:py-3 block w-fit px-5 md:px-7 rounded hover:shadow-md transition duration-300 ease-in-out;
+    @apply text-title text-sm cursor-pointer bg-white font-bold py-2 md:py-3 block w-fit px-5 md:px-7 rounded hover:shadow-md transition duration-300 ease-in-out;
   }
 
   /* section-title */
@@ -70,4 +70,9 @@ h6 {
     @apply !max-w-[275px] flex flex-col cursor-pointer p-5 transition-all duration-300 rounded-md hover:card-shadow relative border border-gray-100 hover:border-gray-200
   }
 
+}
+
+/* Mantine css */
+.mantine-Tabs-tab{
+  padding: 15px;
 }

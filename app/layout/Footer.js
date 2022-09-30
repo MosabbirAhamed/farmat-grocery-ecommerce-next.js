@@ -115,7 +115,7 @@ const Footer = () => {
             <h2 className="text-xl mb-6 font-bold ">Farmart Newsletter</h2>
             <p>Register now to get updates on promotions and coupns. Don't worry! We not spam.</p>
             <div className="flex items-center pt-7">
-              <div className="flex items-center border border-gray-300 p-4 rounded">
+              <div className="flex items-center border border-gray-300 p-2 md:p-4 rounded">
                 <BiEnvelope className="text-color ml-[5px]" />
                 <input
                   type="text"

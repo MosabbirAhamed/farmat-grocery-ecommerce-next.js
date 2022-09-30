@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = ({product}) => {
     const {name, image, price, weight, oldPrice} = product;
@@ -9,6 +10,7 @@ const ProductCard = ({product}) => {
     }
 
   return (
+    <Link href={"/products"}>
     <div className="product-card">
         {oldPrice && (
             <span className="bg-orange text-white text-xs absolute top-2 left-2 z-10 px-2 py-1 rounded-md">{offCalc()}% OFF</span>
@@ -33,6 +35,8 @@ const ProductCard = ({product}) => {
             </div>
         </div>
     </div>
+
+    </Link>
   )
 }
 

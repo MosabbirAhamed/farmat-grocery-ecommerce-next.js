@@ -3,6 +3,7 @@ import { BsStarHalf, BsStarFill, BsStar } from 'react-icons/bs';
 import ReactStars from "react-rating-stars-component";
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
 import InnerImageZoom from 'react-inner-image-zoom'
+import Quantity from "../shared/Quantity";
 
 const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
     return (
@@ -57,12 +58,7 @@ const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
                             <div className="my-5">
                                 <span className="text-color pb-2 block text-sm">Quantity:</span>
                                 <div className="flex gap-2">
-                                    <div className="flex border">
-                                        <button className="w-10 bg-[#f5f5f5] flex justify-center items-center font-bold">-</button>
-                                        <span className="w-10 text-center border border-[#e5e5e5] flex justify-center items-center">1</span>
-                                        <button className="w-10 bg-[#f5f5f5] flex justify-center items-center font-bold">+</button>
-
-                                    </div>
+                                    <Quantity />
                                     <button className="btn-white bg-primary">Add to Cart</button>
                                 </div>
                             </div>

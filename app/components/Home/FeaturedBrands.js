@@ -40,7 +40,7 @@ const FeaturedBrands = () => {
                     moreText="All Offers"
                  />
                  {/* Categories Slider */}
-                 <div className="flex gap-7  overflow-x-auto  mt-5 pt-5  pl-2 -ml-2 ">
+                 <div className="flex gap-7  overflow-x-auto  mt-5 pt-5  pl-2 -ml-2 no-scrollbar">
                     {OFFERS.map((item, index) => (
                         <OfferCard
                             key={index}
