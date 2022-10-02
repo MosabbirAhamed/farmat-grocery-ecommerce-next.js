@@ -120,7 +120,7 @@ const Footer = () => {
                 <input
                   type="text"
                   placeholder="Your email ..."
-                  className="outline-none px-4 flex-1 rounded-l"
+                  className="outline-none w-[120px] md:w-auto px-2 md:px-4 flex-1 rounded-l"
                 />
               </div>
               <Button title="Subscribe" className="self-stretch"/>
