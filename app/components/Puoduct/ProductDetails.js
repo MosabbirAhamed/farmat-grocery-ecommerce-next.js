@@ -4,6 +4,7 @@ import ReactStars from "react-rating-stars-component";
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
 import InnerImageZoom from 'react-inner-image-zoom'
 import Quantity from "../shared/Quantity";
+import Breadcrumb from "../shared/Breadcrumb";
 
 const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
     return (
@@ -15,15 +16,10 @@ const ProductDetails = ({ price = "14.6", oldPrice = "23.3" }) => {
                             <InnerImageZoom src="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?fit=800%2C800&ssl=1" zoomSrc="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?fit=800%2C800&ssl=1" zoomType="hover" fullscreenOnMobile={true} />
                         </div>
                         <div className="lg:w-2/5 w-full md:pl-10 pl-0">
-                            <div className="text-color mb-5">
-                                <a href="/">Home</a>
-                                <span className="mx-2">/</span>
-                                <a href="/">Shop</a>
-                                <span className="mx-2">/</span>
-                                <a href="/">Fruits</a>
-                                <span className="mx-2">/</span>
-                                <span className='text-title'>Soft Mochi & Galeto Ice Cream</span>
-                            </div>
+                                <Breadcrumb
+                                    
+                                />
+
                             <h4 className='md:text-xl text-base text-orange font-bold mb-2'>MartFury</h4>
                             <h1 className='md:text-3xl text-title text-xl font-semibold mb-5'>Soft Mochi & Galeto Ice Cream</h1>
 
