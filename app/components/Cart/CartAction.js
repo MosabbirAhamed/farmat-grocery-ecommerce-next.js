@@ -39,7 +39,9 @@ const CartAction = () => {
             <h2 className="text-xl font-bold text-green">$ 100.00</h2>
           </div>
           <Link href="/checkout">
-            <Button title="Proceed to checkout" className="w-full py-3" />
+            <a href="/checkout">
+              <Button title="Proceed to checkout" className="w-full py-3" />
+            </a>
           </Link>
         </div>
       </div>
