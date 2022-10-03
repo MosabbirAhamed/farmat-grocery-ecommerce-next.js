@@ -1,5 +1,5 @@
-import BillingInfo from "../app/components/checkout/BillingInfo";
-import YourOrder from "../app/components/checkout/YourOrder";
+
+import CheckoutContent from "../app/components/checkout/CheckoutContent";
 import Breadcrumb from "../app/components/shared/Breadcrumb";
 
 const Checkout = () => {
@@ -16,14 +16,7 @@ const Checkout = () => {
           <h1 className="text-4xl text-center text-titel font-bold mb-10">
             Checkout
           </h1>
-          <div className="flex flex-wrap md:flex-nowrap">
-            <div className="md:w-[60%]  w-full ">
-              <BillingInfo />
-            </div>
-            <div className="md:w-[40%] w-full ">
-              <YourOrder />
-            </div>
-          </div>
+          <CheckoutContent />
         </div>
       </div>
     </main>

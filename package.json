@@ -14,14 +14,17 @@
     "@mantine/hooks": "^5.4.2",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
+    "formik": "^2.2.9",
     "markdown-draft-js": "^2.4.0",
+    "multiselect-react-dropdown": "^2.0.25",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-inner-image-zoom": "^3.0.2",
     "react-rating-stars-component": "^2.2.0",
-    "react-stars": "^2.2.5"
+    "react-stars": "^2.2.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",
