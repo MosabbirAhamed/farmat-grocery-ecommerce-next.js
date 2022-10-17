@@ -1,6 +1,6 @@
 import ProductCard from '../Puoduct/ProductCard';
 import SectionHeading from '../shared/SectionHeading';
-import {DEALS} from '../../data/product.js'
+import { DEALS } from '../../data/product.js'
 
 
 
@@ -12,17 +12,17 @@ const TodaysDeals = () => {
                 <SectionHeading
                     title="Top Saver Today"
                     moreText="All Offers"
-                 />
-                 {/* TodaysDeals Slider */}
-                 <div className="flex gap-7  overflow-x-auto  mt-5 pt-5 pb-14 pl-2 -ml-2 no-scrollbar">
-                    {DEALS.map((product , index) => (
-                        <ProductCard 
+                />
+                {/* TodaysDeals Slider */}
+                <div className="flex gap-7 pdc overflow-x-auto no-scrollbar mt-5 pt-5 pb-14 pl-2 -ml-2">
+                    {DEALS.map((product, index) => (
+                        <ProductCard
                             key={index}
                             product={product}
                         />
                     ))}
                 </div>
-                 
+
             </div>
         </section>
     )
