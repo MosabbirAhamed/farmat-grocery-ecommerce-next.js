@@ -1,6 +1,8 @@
 import React from 'react'
 import { AppForm, FormBtn, FormInput, } from "../shared/Form"
 import * as Yup from "yup"
+import { FaFacebookF } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
 
 const validationSchema = Yup.object().shape({
     password: Yup.string().required().label("Password"),
@@ -50,8 +52,8 @@ const Auth = () => {
                     <div className="">
                         <p className="text-center mt-5">Or</p>
                         <div className="flex items-center justify-center gap-5 mt-5 ">
-                            <button className="bg-[#db4437] text-white px-5 py-2 rounded-md ">Google</button>
-                            <button className="bg-[#4267b2] text-white px-5 py-2 rounded-md ">Facebook</button>
+                            <button className="bg-[#88a0ff] flex items-center gap-2 text-white px-4 py-2 rounded-md "><FcGoogle />Google</button>
+                            <button className="bg-[#394594] flex items-center gap-2 text-white px-4 py-2 rounded-md "><FaFacebookF />Facebook</button>
                         </div>
                     </div>
                 </div>
