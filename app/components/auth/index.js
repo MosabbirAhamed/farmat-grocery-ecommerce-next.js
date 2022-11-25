@@ -3,6 +3,9 @@ import { AppForm, FormBtn, FormInput, } from "../shared/Form"
 import * as Yup from "yup"
 import { FaFacebookF } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
+import { auth } from "../../utils/firebase"
+import firebase from "firebase";
+
 
 const validationSchema = Yup.object().shape({
     password: Yup.string().required().label("Password"),
@@ -15,7 +18,28 @@ const Auth = () => {
     const [isLogin, setIsLogin] = React.useState(true);
 
     const HandleLoginSignup = (values) => {
-        console.log(values)
+        if (isLogin) login(values.email, values.password);
+        else signUp(values.email, values.password)
+    }
+
+    const loginWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider()
+        auth.signInWithPopup(provider)
+    }
+
+    const signUp = (email, password) => {
+        auth.createUserWithEmailAndPassword(email, password)
+            .catch((error) => {
+                alert(error.message)
+                console.log(error)
+            })
+    }
+    const login = (email, password) => {
+        auth.signInWithEmailAndPassword(email, password)
+            .catch((error) => {
+                alert(error.message)
+                console.log(error)
+            })
     }
 
     return (
@@ -52,7 +76,7 @@ const Auth = () => {
                     <div className="">
                         <p className="text-center mt-5">Or</p>
                         <div className="flex items-center justify-center gap-5 mt-5 ">
-                            <button className="bg-[#88a0ff] flex items-center gap-2 text-white px-4 py-2 rounded-md "><FcGoogle />Google</button>
+                            <button onClick={loginWithGoogle} className="bg-[#88a0ff] flex items-center gap-2 text-white px-4 py-2 rounded-md "><FcGoogle />Google</button>
                             <button className="bg-[#394594] flex items-center gap-2 text-white px-4 py-2 rounded-md "><FaFacebookF />Facebook</button>
                         </div>
                     </div>
