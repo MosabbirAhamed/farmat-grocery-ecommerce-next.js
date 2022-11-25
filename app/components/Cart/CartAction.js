@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "../shared/Button";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { selectTotalPrice } from "../../redux/slices/basketSlice";
 
 const CartAction = () => {
+  const totalPrice = useSelector(selectTotalPrice)
   return (
     <div className="py-8 border-t">
       <div className="flex justify-between gap-5 flex-wrap">
@@ -22,7 +25,7 @@ const CartAction = () => {
         <div className="bg-gray-100 p-5 rounded-md md:w-[40%] w-full">
           <div className="flex justify-between pb-5 border-b">
             <h2 className="text-lg font-bold">SubTotal</h2>
-            <h2 className="text-lg font-bold">$ 100.00</h2>
+            <h2 className="text-lg font-bold">$ {(totalPrice).toFixed(2)}</h2>
           </div>
 
           <div className="py-5 border-b space-y-3">
@@ -36,7 +39,7 @@ const CartAction = () => {
           </div>
           <div className="flex justify-between py-5 ">
             <h2 className="text-xl font-bold">Total</h2>
-            <h2 className="text-xl font-bold text-green">$ 100.00</h2>
+            <h2 className="text-xl font-bold text-green">$ {(totalPrice).toFixed(2)}</h2>
           </div>
           <Link href="/checkout">
             <a href="/checkout">

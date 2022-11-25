@@ -1,9 +1,11 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux';
+import { selectItems } from '../../redux/slices/basketSlice';
 import CartTableMobile from './CartTableMobile';
 import CartTableRow from './CartTableRow';
 
 const CartTable = () => {
+    const cartItems = useSelector(selectItems)
     return (
         <div className="my-5">
             <table className="w-full md:table hidden">
@@ -19,15 +21,15 @@ const CartTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <CartTableRow />
-                    <CartTableRow />
-                    <CartTableRow />
+                    {cartItems.map((item) => (
+                        <CartTableRow key={item.id} {...item} />
+                    ))}
                 </tbody>
             </table>
 
-            <CartTableMobile />
-            <CartTableMobile />
-            <CartTableMobile />
+            {cartItems.map((item) => (
+                <CartTableMobile key={item.id} {...item} />
+            ))}
         </div>
     )
 }

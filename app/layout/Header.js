@@ -2,9 +2,15 @@ import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import Search from '../components/Search';
-import { FiUser , FiShoppingCart } from 'react-icons/fi';
+import { FiUser, FiShoppingCart } from 'react-icons/fi';
+import { selectTotalCartItems } from '../redux/slices/basketSlice';
+import { useSelector } from 'react-redux';
+
 
 const Header = () => {
+  const cartItems = useSelector(selectTotalCartItems)
+
+
   return (
     <header className='bg-white py-5 border-b '>
       <div className="container ">
@@ -38,22 +44,22 @@ const Header = () => {
           {/* Icons */}
           <div className="flex items-center gap-5">
             <Link href="/my-account">
-            <a href="/my-account" className="">
-              <FiUser className="text-3xl text-title"/>
-            </a>
+              <a href="/my-account" className="">
+                <FiUser className="text-3xl text-title" />
+              </a>
             </Link>
 
             <Link href="/cart">
-            <a href="/cart" className="flex items-center gap-5">
-              <div className="relative">
-              <FiShoppingCart className="text-3xl text-title"/>
-              <span className="bg-primary rounded text-center absolute px-2 text-sm -right-3 -top-2 font-bold">0</span>
-              </div>
-              <div className="hidden lg:block">
-                <span className="text-color text-[12px] ">Your Cart</span>
-                <p className="text-title font-bold text-base">$0.00</p>
-              </div>
-            </a>
+              <a href="/cart" className="flex items-center gap-5">
+                <div className="relative">
+                  <FiShoppingCart className="text-3xl text-title" />
+                  <span className="bg-primary rounded text-center absolute px-2 text-sm -right-3 -top-2 font-bold">{cartItems || 0}</span>
+                </div>
+                <div className="hidden lg:block">
+                  <span className="text-color text-[12px] ">Your Cart</span>
+                  <p className="text-title font-bold text-base">$0.00</p>
+                </div>
+              </a>
             </Link>
           </div>
 
