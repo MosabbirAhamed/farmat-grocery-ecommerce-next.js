@@ -3,7 +3,7 @@ import { AppForm, FormBtn, FormInput, } from "../shared/Form"
 import * as Yup from "yup"
 import { FaFacebookF } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { auth } from "../../utils/firebase"
+import { auth, db } from "../../utils/firebase"
 import firebase from "firebase";
 
 
@@ -25,10 +25,16 @@ const Auth = () => {
     const loginWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
+            .then((userCredential) => {
+                addUserToDatabase(userCredential.user)
+            })
     }
 
     const signUp = (email, password) => {
         auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                addUserToDatabase(userCredential.user)
+            })
             .catch((error) => {
                 alert(error.message)
                 console.log(error)
@@ -40,6 +46,19 @@ const Auth = () => {
                 alert(error.message)
                 console.log(error)
             })
+    }
+
+    const addUserToDatabase = async (user) => {
+        const { uid, email, displayName, photoURL } = user;
+        const userRef = await db.collection("users").doc(uid).get();
+        if (!userRef.exists) {
+            db.collection("users").doc(uid).set({
+                uid,
+                name: displayName,
+                email,
+                image: photoURL,
+            })
+        }
     }
 
     return (
